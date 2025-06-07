@@ -5,6 +5,7 @@ import DinnerThemePreview from '@/components/sections/DinnerThemePreview';
 import LookbookSection from '@/components/sections/LookbookSection';
 import RegistrationSection from '@/components/sections/RegistrationSection';
 import VotingSection from '@/components/sections/VotingSection';
+import LandingPicsSection from '@/components/sections/LandingPicsSection';
 import { Separator } from '@/components/ui/separator';
 
 export default function Home() {
@@ -13,6 +14,8 @@ export default function Home() {
       <Header />
       <main className="flex-grow">
         <HeroSection />
+        <Separator className="my-0 border-primary/10" />
+        <LandingPicsSection />
         <Separator className="my-0 border-primary/10" />
         <DinnerThemePreview />
         <Separator className="my-0 border-primary/10" />

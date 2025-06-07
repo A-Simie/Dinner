@@ -3,7 +3,7 @@ import { PartyPopper } from 'lucide-react';
 
 export default function Header() {
   return (
-    <header className="py-6 px-4 sm:px-6 lg:px-8 bg-background shadow-md">
+    <header className="py-6 px-4 sm:px-6 lg:px-8 bg-background shadow-md sticky top-0 z-50">
       <div className="container mx-auto flex justify-between items-center">
         <Link href="/" className="flex items-center gap-2">
           <PartyPopper className="h-8 w-8 text-primary" />
@@ -11,12 +11,12 @@ export default function Header() {
             Owanbe Evening
           </h1>
         </Link>
-        <nav className="space-x-6">
-          {['Home', 'Theme', 'Lookbook', 'Register', 'Vote'].map((item) => (
+        <nav className="space-x-4">
+          {['Home', 'Pics', 'Theme', 'Lookbook', 'Register', 'Vote'].map((item) => (
             <Link
               key={item}
-              href={`#${item.toLowerCase()}`}
-              className="text-foreground hover:text-primary transition-colors duration-300 font-medium"
+              href={`#${item.toLowerCase().replace(' ', '-')}`}
+              className="text-foreground hover:text-primary transition-colors duration-300 font-medium text-sm sm:text-base"
             >
               {item}
             </Link>
