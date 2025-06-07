@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from 'next/link';
@@ -16,7 +17,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="py-4 px-4 sm:px-6 lg:px-8 bg-background shadow-md sticky top-0 z-50">
+    <header className="py-4 px-4 sm:px-6 lg:px-8 bg-background shadow-sm border-b border-border sticky top-0 z-50">
       <div className="container mx-auto flex justify-between items-center">
         <Link href="/" className="flex items-center gap-2">
           <PartyPopper className="h-7 w-7 sm:h-8 sm:w-8 text-primary" />

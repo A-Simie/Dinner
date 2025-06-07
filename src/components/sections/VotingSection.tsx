@@ -104,7 +104,7 @@ export default function VotingSection() {
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {candidates.map((candidate) => (
-            <Card key={candidate.id} className="overflow-hidden flex flex-col champagne-hover shadow-xl border-primary/10">
+            <Card key={candidate.id} className="overflow-hidden flex flex-col champagne-hover shadow-xl border-border">
               <CardHeader className="p-0">
                 <div className="aspect-video relative w-full">
                   <Image

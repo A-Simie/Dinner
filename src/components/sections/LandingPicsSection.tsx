@@ -45,7 +45,7 @@ export default function LandingPicsSection() {
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {landingImages.map((pic) => (
-            <Card key={pic.id} className="overflow-hidden champagne-hover shadow-xl border-primary/20 group transform transition-all duration-300 hover:scale-105">
+            <Card key={pic.id} className="overflow-hidden champagne-hover shadow-xl border-border group transform transition-all duration-300 hover:scale-105">
               <CardContent className="p-0">
                 <div className="aspect-video relative w-full">
                   <Image

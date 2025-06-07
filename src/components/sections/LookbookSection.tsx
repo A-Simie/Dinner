@@ -32,7 +32,7 @@ const StyleCarousel = ({ styles }: { styles: typeof maleStyles }) => (
     <CarouselContent className="-ml-2 sm:-ml-4">
       {styles.map((style) => (
         <CarouselItem key={style.id} className="basis-full sm:basis-1/2 md:basis-1/2 lg:basis-1/3 p-2 sm:p-2">
-          <Card className="group overflow-hidden h-full flex flex-col champagne-hover shadow-lg border-primary/10 transform transition-all duration-300 hover:scale-105">
+          <Card className="group overflow-hidden h-full flex flex-col champagne-hover shadow-lg border-border transform transition-all duration-300 hover:scale-105">
             <CardHeader className="p-0">
               <div className="aspect-[3/4] relative w-full">
                 <Image

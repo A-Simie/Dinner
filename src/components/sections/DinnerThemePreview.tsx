@@ -38,7 +38,7 @@ export default function DinnerThemePreview() {
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
           {themes.map((theme) => (
-            <Card key={theme.id} className="group overflow-hidden champagne-hover shadow-xl border-primary/20 transform transition-all duration-300 hover:scale-105">
+            <Card key={theme.id} className="group overflow-hidden champagne-hover shadow-xl border-border transform transition-all duration-300 hover:scale-105">
               <CardHeader className="p-0">
                 <div className="aspect-video relative w-full">
                   <Image

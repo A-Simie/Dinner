@@ -86,7 +86,7 @@ export default function RegistrationSection() {
             </div>
         </div>
         <div className="md:w-1/2 w-full max-w-lg mx-auto mt-8 md:mt-0">
-            <Card className="shadow-2xl border-primary/20 bg-card">
+            <Card className="shadow-2xl border-border bg-card">
             <CardHeader className="p-4 sm:p-6">
                 <CardTitle className="text-2xl sm:text-3xl font-headline text-primary">Register for Owanbe Evening</CardTitle>
                 <CardDescription className="text-sm sm:text-base text-foreground/70 mt-1">We can't wait to celebrate with you!</CardDescription>
