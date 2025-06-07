@@ -2,6 +2,15 @@ import Link from 'next/link';
 import { PartyPopper } from 'lucide-react';
 
 export default function Header() {
+  const navItems = [
+    { name: 'Home', href: '/' },
+    { name: 'Pics', href: '/pics' },
+    { name: 'Theme', href: '/theme' },
+    { name: 'Lookbook', href: '/lookbook' },
+    { name: 'Register', href: '/register' },
+    { name: 'Vote', href: '/vote' },
+  ];
+
   return (
     <header className="py-6 px-4 sm:px-6 lg:px-8 bg-background shadow-md sticky top-0 z-50">
       <div className="container mx-auto flex justify-between items-center">
@@ -12,13 +21,13 @@ export default function Header() {
           </h1>
         </Link>
         <nav className="space-x-4">
-          {['Home', 'Pics', 'Theme', 'Lookbook', 'Register', 'Vote'].map((item) => (
+          {navItems.map((item) => (
             <Link
-              key={item}
-              href={`#${item.toLowerCase().replace(' ', '-')}`}
+              key={item.name}
+              href={item.href}
               className="text-foreground hover:text-primary transition-colors duration-300 font-medium text-sm sm:text-base"
             >
-              {item}
+              {item.name}
             </Link>
           ))}
         </nav>
