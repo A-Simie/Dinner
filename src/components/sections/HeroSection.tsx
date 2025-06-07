@@ -17,7 +17,7 @@ export default function HeroSection() {
   return (
     <section id="home" className="relative min-h-[70vh] sm:min-h-[80vh] flex flex-col items-center justify-center text-center py-16 sm:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <Image
-        src="https://placehold.co/1920x1080/F7E7CE/CC6633"
+        src="https://i.ibb.co/j9KBqJzV/Whats-App-Image-2025-06-07-at-12-54-03-5f32e71e.jpg"
         alt="Elegant event background"
         layout="fill"
         objectFit="cover"
@@ -31,10 +31,10 @@ export default function HeroSection() {
         <TypewriterEffect 
           text={heroTitle} 
           speed={70}
-          className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl font-bold text-primary font-headline leading-tight"
+          className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl font-bold text-foreground drop-shadow font-headline leading-tight"
           tagName="h2"
         />
-        <p className="text-lg sm:text-xl md:text-2xl text-foreground/80 max-w-xs sm:max-w-xl md:max-w-3xl mx-auto animate-fadeInUp" style={{animationDelay: '1.5s', opacity: 0}}>
+        <p className="text-lg sm:text-xl md:text-2xl text-secondary-foreground max-w-xs sm:max-w-xl md:max-w-3xl mx-auto animate-fadeInUp" style={{animationDelay: '1.5s', opacity: 0}}>
           Join us for an unforgettable night celebrating style, culture, and creativity.
         </p>
         <div className="mt-8 sm:mt-12 animate-fadeInUp" style={{animationDelay: '2s', opacity: 0}}>
@@ -64,3 +64,4 @@ export default function HeroSection() {
   animation-fill-mode: forwards;
 }
 */
+
