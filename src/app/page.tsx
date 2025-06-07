@@ -6,14 +6,16 @@ import Footer from '@/components/layout/Footer';
 import HeroSection from '@/components/sections/HeroSection';
 import LandingPicsSection from '@/components/sections/LandingPicsSection';
 import { Separator } from '@/components/ui/separator';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { Droplets } from 'lucide-react'; // Icon for Dripboard
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from "@/components/ui/carousel";
+import { Droplets } from 'lucide-react';
 
 const dripboardPreviewItems = [
   { id: 'f-preview-1', name: 'Golden Hour Elegance', imageUrl: 'https://i.ibb.co/XrJQ8pJH/image.jpg', aiHint: 'african fashion gold', category: 'Female' },
@@ -43,31 +45,40 @@ export default function Home() {
             <p className="text-base sm:text-lg text-foreground/80 mb-8 sm:mb-12 max-w-md sm:max-w-2xl mx-auto">
               Get a taste of the styles inspiring our Owanbe Evening.
             </p>
-            <Accordion type="single" collapsible className="w-full max-w-3xl mx-auto mb-8">
-              <AccordionItem value="item-1" className="border-border">
-                <AccordionTrigger className="text-xl font-headline text-primary hover:no-underline">Featured Drips</AccordionTrigger>
-                <AccordionContent>
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-4">
-                    {dripboardPreviewItems.map((item) => (
-                      <div key={item.id} className="group relative overflow-hidden rounded-lg shadow-lg champagne-hover">
-                        <Image
-                          src={item.imageUrl}
-                          alt={item.name}
-                          width={400}
-                          height={500}
-                          className="object-cover w-full h-auto aspect-[4/5] transform transition-transform duration-300 group-hover:scale-105"
-                          data-ai-hint={item.aiHint}
-                        />
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-4xl mx-auto mb-8"
+            >
+              <CarouselContent>
+                {dripboardPreviewItems.map((item) => (
+                  <CarouselItem key={item.id} className="basis-full sm:basis-1/2 md:basis-1/2 lg:basis-1/2 p-2">
+                    <Card className="group relative overflow-hidden rounded-lg shadow-lg champagne-hover h-full flex flex-col">
+                      <CardContent className="p-0 flex-grow">
+                        <div className="aspect-[4/5] relative w-full">
+                          <Image
+                            src={item.imageUrl}
+                            alt={item.name}
+                            layout="fill"
+                            objectFit="cover"
+                            className="transform transition-transform duration-300 group-hover:scale-105"
+                            data-ai-hint={item.aiHint}
+                          />
+                        </div>
                          <div className="absolute bottom-0 left-0 right-0 bg-black/50 p-2 text-center">
                             <p className="text-xs sm:text-sm font-semibold text-white truncate">{item.name}</p>
                             <p className="text-[10px] sm:text-xs text-primary-foreground/80">{item.category}</p>
                         </div>
-                      </div>
-                    ))}
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
+                      </CardContent>
+                    </Card>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="ml-0 sm:ml-4" />
+              <CarouselNext className="mr-0 sm:mr-4" />
+            </Carousel>
             <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground metallic-hover">
               <Link href="/dripboard">Explore Full Dripboard</Link>
             </Button>

@@ -29,35 +29,27 @@ const femaleStyles: StyleItem[] = [
 ];
 
 const maleStyles: StyleItem[] = [
-  { id: 'm1', name: 'Classic Agbada', designer: 'Ade Bakare', imageUrl: 'https://placehold.co/400x600/CC6633/F7E7CE', aiHint: 'male agbada fashion' },
-  { id: 'm2', name: 'Modern Senator', designer: 'Yomi Casual', imageUrl: 'https://placehold.co/400x600/E2725B/F7E7CE', aiHint: 'male senator wear' },
-  { id: 'm3', name: 'Urban Dashiki', designer: 'Orange Culture', imageUrl: 'https://placehold.co/400x600/5A4D41/F7E7CE', aiHint: 'male dashiki outfit' },
-  { id: 'm4', name: 'Regal Brocade', designer: 'Mai Atafo', imageUrl: 'https://placehold.co/400x600/AA7739/F7E7CE', aiHint: 'male brocade suit' },
-  { id: 'm5', name: 'Elegant Kaftan', designer: 'Northern Styles', imageUrl: 'https://placehold.co/400x550/B08D57/F7E7CE', aiHint: 'male kaftan elegant' },
-  { id: 'm6', name: 'Sharp Tuxedo', designer: 'Evening Wear Inc.', imageUrl: 'https://placehold.co/400x650/332211/F7E7CE', aiHint: 'black tuxedo formal' },
+  { id: 'm1', name: 'Classic Agbada', designer: 'Ade Bakare', imageUrl: 'https://placehold.co/400x500/CC6633/F7E7CE', aiHint: 'male agbada fashion' },
+  { id: 'm2', name: 'Modern Senator', designer: 'Yomi Casual', imageUrl: 'https://placehold.co/400x500/E2725B/F7E7CE', aiHint: 'male senator wear' },
+  { id: 'm3', name: 'Urban Dashiki', designer: 'Orange Culture', imageUrl: 'https://placehold.co/400x500/5A4D41/F7E7CE', aiHint: 'male dashiki outfit' },
+  { id: 'm4', name: 'Regal Brocade', designer: 'Mai Atafo', imageUrl: 'https://placehold.co/400x500/AA7739/F7E7CE', aiHint: 'male brocade suit' },
+  { id: 'm5', name: 'Elegant Kaftan', designer: 'Northern Styles', imageUrl: 'https://placehold.co/400x500/B08D57/F7E7CE', aiHint: 'male kaftan elegant' },
+  { id: 'm6', name: 'Sharp Tuxedo', designer: 'Evening Wear Inc.', imageUrl: 'https://placehold.co/400x500/332211/F7E7CE', aiHint: 'black tuxedo formal' },
 ];
 
-const MasonryGallery = ({ styles }: { styles: StyleItem[] }) => {
-  const numColumns = styles.length < 4 ? 2 : 4; // Use 2 columns if less than 4 items, else 4
-  const columns: StyleItem[][] = Array.from({ length: numColumns }, () => []);
-  styles.forEach((style, index) => {
-    columns[index % numColumns].push(style);
-  });
-
+const StyleGrid = ({ styles }: { styles: StyleItem[] }) => {
   return (
-    <div className={`grid grid-cols-2 md:grid-cols-${numColumns} gap-4 sm:gap-6`}>
-      {columns.map((column, colIndex) => (
-        <div key={`col-${colIndex}`} className="grid gap-4 sm:gap-6">
-          {column.map((style) => (
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6">
+      {styles.map((style) => (
             <Card key={style.id} className="group overflow-hidden h-fit flex flex-col champagne-hover shadow-lg border-border transform transition-all duration-300 hover:scale-105">
               <CardHeader className="p-0">
-                <div className="relative w-full">
+                <div className="relative w-full aspect-[4/5]">
                   <Image
                     src={style.imageUrl}
                     alt={style.name}
-                    width={400}
-                    height={600} // Approximate height, actual height will vary
-                    className="h-auto max-w-full rounded-t-lg object-cover transform transition-transform duration-300 group-hover:scale-105"
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-t-lg transform transition-transform duration-300 group-hover:scale-105"
                     data-ai-hint={style.aiHint}
                   />
                 </div>
@@ -72,8 +64,6 @@ const MasonryGallery = ({ styles }: { styles: StyleItem[] }) => {
                  <Badge variant="outline" className="border-accent text-accent text-xs sm:text-sm">Inspiration</Badge>
               </CardFooter>
             </Card>
-          ))}
-        </div>
       ))}
     </div>
   );
@@ -99,10 +89,10 @@ export default function DripboardSection() {
             <TabsTrigger value="male" className="data-[state=active]:bg-accent data-[state=active]:text-accent-foreground text-sm sm:text-base">Male Styles</TabsTrigger>
           </TabsList>
           <TabsContent value="female" className="mt-8 sm:mt-10">
-            <MasonryGallery styles={femaleStyles} />
+            <StyleGrid styles={femaleStyles} />
           </TabsContent>
           <TabsContent value="male" className="mt-8 sm:mt-10">
-            <MasonryGallery styles={maleStyles} />
+            <StyleGrid styles={maleStyles} />
           </TabsContent>
         </Tabs>
       </div>
