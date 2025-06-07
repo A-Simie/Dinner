@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
 import { Camera } from 'lucide-react';
@@ -31,18 +32,18 @@ const landingImages = [
 
 export default function LandingPicsSection() {
   return (
-    <section id="pics" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-background">
+    <section id="pics" className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="container mx-auto text-center">
-        <div className="flex justify-center items-center mb-4">
-          <Camera className="h-12 w-12 text-primary mr-3" />
-          <h2 className="text-4xl sm:text-5xl font-bold text-primary font-headline">
+        <div className="flex justify-center items-center mb-3 sm:mb-4">
+          <Camera className="h-10 w-10 sm:h-12 sm:w-12 text-primary mr-2 sm:mr-3" />
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary font-headline">
             Event Snapshots
           </h2>
         </div>
-        <p className="text-lg text-foreground/80 mb-12 max-w-2xl mx-auto">
+        <p className="text-base sm:text-lg text-foreground/80 mb-8 sm:mb-12 max-w-md sm:max-w-2xl mx-auto">
           Catch a glimpse of the unforgettable moments and stunning visuals from past Owanbe Evenings.
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {landingImages.map((pic) => (
             <Card key={pic.id} className="overflow-hidden champagne-hover shadow-xl border-primary/20 group">
               <CardContent className="p-0">

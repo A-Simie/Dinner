@@ -1,3 +1,4 @@
+
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -25,6 +26,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { UserPlus } from "lucide-react";
+import NextImage from 'next/image'; // Renamed to avoid conflict
 
 const registrationFormSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters.").max(50, "Name must be at most 50 characters."),
@@ -63,42 +65,43 @@ export default function RegistrationSection() {
   }
 
   return (
-    <section id="register" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-background/80">
-      <div className="container mx-auto flex flex-col md:flex-row items-center md:gap-12">
+    <section id="register" className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-background/80">
+      <div className="container mx-auto flex flex-col md:flex-row items-center md:gap-8 lg:gap-12">
         <div className="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
-            <UserPlus className="h-16 w-16 text-primary mx-auto md:mx-0 mb-4" />
-            <h2 className="text-4xl sm:text-5xl font-bold text-primary mb-4 font-headline">
+            <UserPlus className="h-12 w-12 sm:h-16 sm:w-16 text-primary mx-auto md:mx-0 mb-3 sm:mb-4" />
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-3 sm:mb-4 font-headline">
             Secure Your Spot
             </h2>
-            <p className="text-lg text-foreground/80 mb-6 max-w-md mx-auto md:mx-0">
+            <p className="text-base sm:text-lg text-foreground/80 mb-6 max-w-md mx-auto md:mx-0">
             Join us for an evening of splendor. Fill out the form to RSVP and let us know you're coming!
             </p>
-            <Image
-            src="https://placehold.co/600x400/F7E7CE/5A4D41"
-            alt="Elegant registration visual"
-            width={600}
-            height={400}
-            className="rounded-lg shadow-xl object-cover mx-auto md:mx-0 champagne-hover"
-            data-ai-hint="event invitation elegant"
-            />
+            <div className="relative w-full max-w-md mx-auto md:max-w-none aspect-[3/2] sm:aspect-video rounded-lg shadow-xl overflow-hidden champagne-hover">
+              <NextImage
+                src="https://placehold.co/600x400/F7E7CE/5A4D41"
+                alt="Elegant registration visual"
+                layout="fill"
+                objectFit="cover"
+                data-ai-hint="event invitation elegant"
+              />
+            </div>
         </div>
-        <div className="md:w-1/2 w-full max-w-lg mx-auto">
+        <div className="md:w-1/2 w-full max-w-lg mx-auto mt-8 md:mt-0">
             <Card className="shadow-2xl border-primary/20 bg-card">
-            <CardHeader>
-                <CardTitle className="text-3xl font-headline text-primary">Register for Owanbe Evening</CardTitle>
-                <CardDescription className="text-foreground/70">We can't wait to celebrate with you!</CardDescription>
+            <CardHeader className="p-4 sm:p-6">
+                <CardTitle className="text-2xl sm:text-3xl font-headline text-primary">Register for Owanbe Evening</CardTitle>
+                <CardDescription className="text-sm sm:text-base text-foreground/70 mt-1">We can't wait to celebrate with you!</CardDescription>
             </CardHeader>
-            <CardContent>
+            <CardContent className="p-4 sm:p-6">
                 <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 sm:space-y-6">
                     <FormField
                     control={form.control}
                     name="name"
                     render={({ field }) => (
                         <FormItem>
-                        <FormLabel>Full Name</FormLabel>
+                        <FormLabel className="text-sm sm:text-base">Full Name</FormLabel>
                         <FormControl>
-                            <Input placeholder="e.g., Adaobi Chukwuma" {...field} className="bg-background/50 focus:bg-background"/>
+                            <Input placeholder="e.g., Adaobi Chukwuma" {...field} className="bg-background/50 focus:bg-background text-sm sm:text-base"/>
                         </FormControl>
                         <FormMessage />
                         </FormItem>
@@ -109,9 +112,9 @@ export default function RegistrationSection() {
                     name="email"
                     render={({ field }) => (
                         <FormItem>
-                        <FormLabel>Email Address</FormLabel>
+                        <FormLabel className="text-sm sm:text-base">Email Address</FormLabel>
                         <FormControl>
-                            <Input type="email" placeholder="your.email@example.com" {...field} className="bg-background/50 focus:bg-background"/>
+                            <Input type="email" placeholder="your.email@example.com" {...field} className="bg-background/50 focus:bg-background text-sm sm:text-base"/>
                         </FormControl>
                         <FormMessage />
                         </FormItem>
@@ -122,10 +125,10 @@ export default function RegistrationSection() {
                     name="gender"
                     render={({ field }) => (
                         <FormItem>
-                        <FormLabel>Gender</FormLabel>
+                        <FormLabel className="text-sm sm:text-base">Gender</FormLabel>
                         <Select onValueChange={field.onChange} defaultValue={field.value}>
                             <FormControl>
-                            <SelectTrigger className="bg-background/50 focus:bg-background">
+                            <SelectTrigger className="bg-background/50 focus:bg-background text-sm sm:text-base">
                                 <SelectValue placeholder="Select your gender" />
                             </SelectTrigger>
                             </FormControl>
@@ -144,15 +147,15 @@ export default function RegistrationSection() {
                     name="outfitDescription"
                     render={({ field }) => (
                         <FormItem>
-                        <FormLabel>Outfit Description</FormLabel>
+                        <FormLabel className="text-sm sm:text-base">Outfit Description</FormLabel>
                         <FormControl>
                             <Textarea
                             placeholder="Tell us a bit about your planned attire..."
-                            className="resize-none bg-background/50 focus:bg-background"
+                            className="resize-none bg-background/50 focus:bg-background text-sm sm:text-base"
                             {...field}
                             />
                         </FormControl>
-                        <FormDescription>
+                        <FormDescription className="text-xs sm:text-sm">
                             Share your style inspiration for the evening!
                         </FormDescription>
                         <FormMessage />
@@ -164,15 +167,15 @@ export default function RegistrationSection() {
                         name="guests"
                         render={({ field }) => (
                             <FormItem>
-                            <FormLabel>Number of Additional Guests (0-5)</FormLabel>
+                            <FormLabel className="text-sm sm:text-base">Number of Additional Guests (0-5)</FormLabel>
                             <FormControl>
-                                <Input type="number" min="0" max="5" {...field} onChange={event => field.onChange(+event.target.value)}  className="bg-background/50 focus:bg-background" />
+                                <Input type="number" min="0" max="5" {...field} onChange={event => field.onChange(+event.target.value)}  className="bg-background/50 focus:bg-background text-sm sm:text-base" />
                             </FormControl>
                             <FormMessage />
                             </FormItem>
                         )}
                         />
-                    <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground text-lg py-6">
+                    <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground text-base sm:text-lg py-3 sm:py-6">
                         RSVP Now
                     </Button>
                 </form>
@@ -184,9 +187,3 @@ export default function RegistrationSection() {
     </section>
   );
 }
-
-// Placeholder for Image component if not using next/image directly for some reason
-const Image = ({ src, alt, width, height, className, ...props }: { src: string, alt: string, width?: number, height?: number, className?: string, "data-ai-hint": string }) => (
-  // eslint-disable-next-line @next/next/no-img-element
-  <img src={src} alt={alt} width={width} height={height} className={className} {...props} />
-);
