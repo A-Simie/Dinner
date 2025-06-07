@@ -8,95 +8,96 @@ body {
 
 @layer base {
   :root {
-    --background: 90 30% 96%; /* Pale Sage White */
-    --foreground: 120 25% 18%; /* Deep Forest Green */
+    --background: 25 80% 96%; /* Light Terracotta Cream (Original Base) */
+    --foreground: 25 40% 25%; /* Deep Terracotta Brown (Original Base) */
 
-    --card: 90 30% 94%; /* Slightly darker Pale Sage */
-    --card-foreground: 120 25% 18%;
+    --card: 25 80% 94%; /* Slightly darker Terracotta Cream */
+    --card-foreground: 25 40% 25%;
 
-    --popover: 90 30% 94%;
-    --popover-foreground: 120 25% 18%;
+    --popover: 25 80% 94%;
+    --popover-foreground: 25 40% 25%;
 
-    --primary: 100 30% 45%; /* Medium Sage Green */
-    --primary-foreground: 90 30% 97%; /* Very Light Sage for text on primary */
+    --primary: 20 70% 55%; /* Rich Terracotta (Original Primary) */
+    --primary-foreground: 30 80% 97%; /* Very Light Cream for text on primary */
 
-    --secondary: 95 25% 78%; /* Light Muted Sage */
-    --secondary-foreground: 120 25% 18%;
+    --secondary: 100 30% 70%; /* Light Sage Green (Sage Infusion) */
+    --secondary-foreground: 100 25% 20%; /* Dark Sage for text on secondary */
 
-    --muted: 90 20% 90%; /* Muted Light Sage */
-    --muted-foreground: 110 20% 35%; /* Darker Muted Green */
+    --muted: 100 25% 92%; /* Very Pale Sage (Sage Infusion) */
+    --muted-foreground: 100 20% 45%; /* Darker Muted Sage */
 
-    --accent: 130 40% 55%; /* Soft Emerald - the 'pinch of green' */
-    --accent-foreground: 0 0% 100%; /* White for text on accent */
+    --accent: 140 40% 45%; /* Sophisticated Emerald - "Pinch of Green" (Green Infusion) */
+    --accent-foreground: 30 80% 97%; /* Very Light Cream for text on accent */
 
-    --destructive: 0 70% 55%; /* Adjusted for better harmony */
+    --destructive: 0 65% 50%; /* Harmonized Red */
     --destructive-foreground: 0 0% 98%;
 
-    --border: 90 20% 85%; /* Light Sage Grey Border */
-    --input: 90 25% 92%; /* Slightly off Pale Sage White for input background */
-    --ring: 100 30% 45%; /* Primary Sage for ring */
+    --border: 100 30% 88%; /* Light Sage Border (Sage Infusion) */
+    --input: 100 35% 93%; /* Pale Sage Input Background (Sage Infusion) */
+    --ring: 20 70% 55%; /* Primary Terracotta for ring */
     
-    --chart-1: 100 35% 50%;
-    --chart-2: 125 30% 40%;
-    --chart-3: 110 25% 60%;
-    --chart-4: 135 38% 52%;
-    --chart-5: 90 28% 65%;
+    --chart-1: 20 65% 60%; /* Terracotta family */
+    --chart-2: 100 35% 60%; /* Sage family */
+    --chart-3: 40 70% 65%; /* Amber/Gold family (inspired by original accent) */
+    --chart-4: 140 45% 55%; /* Green family (pinch of green) */
+    --chart-5: 25 50% 70%; /* Muted Terracotta */
     --radius: 0.5rem;
 
     /* Sidebar specific colors */
-    --sidebar-background: 90 30% 94%;
-    --sidebar-foreground: 120 25% 18%;
-    --sidebar-primary: 100 30% 45%;
-    --sidebar-primary-foreground: 90 30% 97%;
-    --sidebar-accent: 130 40% 55%;
-    --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 90 20% 85%;
-    --sidebar-ring: 100 30% 45%;
+    --sidebar-background: 100 25% 94%; /* Pale Sage for sidebar background */
+    --sidebar-foreground: 25 40% 25%;   /* Deep Terracotta Brown for text */
+    --sidebar-primary: 20 70% 55%;      /* Terracotta for active/primary items */
+    --sidebar-primary-foreground: 30 80% 97%;
+    --sidebar-accent: 140 40% 45%;      /* Green accent for sidebar */
+    --sidebar-accent-foreground: 30 80% 97%;
+    --sidebar-border: 100 30% 88%;      /* Light Sage Border for sidebar */
+    --sidebar-ring: 20 70% 55%;
   }
 
   .dark {
-    --background: 120 25% 12%; /* Very Dark Desaturated Green */
-    --foreground: 90 25% 92%; /* Pale Sage White text */
+    --background: 25 20% 12%; /* Very Dark Desaturated Terracotta Brown */
+    --foreground: 30 60% 92%; /* Light Terracotta Cream text */
 
-    --card: 120 25% 15%;
-    --card-foreground: 90 25% 92%;
+    --card: 25 20% 15%;
+    --card-foreground: 30 60% 92%;
 
-    --popover: 120 25% 15%;
-    --popover-foreground: 90 25% 92%;
+    --popover: 25 20% 15%;
+    --popover-foreground: 30 60% 92%;
 
-    --primary: 100 30% 55%; /* Richer Sage for dark mode */
-    --primary-foreground: 120 25% 8%; /* Very Dark for text on primary */
+    --primary: 20 60% 60%; /* Richer Terracotta for dark mode */
+    --primary-foreground: 25 20% 8%; /* Very Dark for text on primary */
 
-    --secondary: 95 20% 28%; /* Dark Muted Sage */
-    --secondary-foreground: 90 25% 92%;
+    --secondary: 100 25% 35%; /* Dark Muted Sage (Sage Infusion) */
+    --secondary-foreground: 100 40% 88%; /* Lighter Sage for text */
 
-    --muted: 90 15% 25%; /* Dark Grey-Sage */
-    --muted-foreground: 100 20% 75%; /* Lighter Muted Sage */
+    --muted: 100 20% 28%; /* Dark Grey-Sage (Sage Infusion) */
+    --muted-foreground: 100 30% 70%; /* Lighter Muted Sage */
 
-    --accent: 130 45% 60%; /* Vibrant Soft Emerald for dark mode */
-    --accent-foreground: 120 25% 8%; /* Dark text on accent */
+    --accent: 140 45% 55%; /* More Vibrant Emerald for dark mode (Green Infusion) */
+    --accent-foreground: 25 20% 8%; /* Dark text on accent */
 
-    --destructive: 0 60% 45%;
+    --destructive: 0 55% 40%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 110 15% 33%; /* Muted Dark Sage Border */
-    --input: 110 20% 22%; /* Slightly Lighter Dark Sage for input */
-    --ring: 100 30% 55%; /* Primary Sage for ring */
+    --border: 100 20% 38%; /* Muted Dark Sage Border (Sage Infusion) */
+    --input: 100 25% 25%; /* Slightly Lighter Dark Sage for input (Sage Infusion) */
+    --ring: 20 60% 60%; /* Primary Terracotta for ring */
 
-    --chart-1: 100 30% 60%;
-    --chart-2: 125 35% 50%;
-    --chart-3: 110 20% 70%;
-    --chart-4: 135 40% 58%;
-    --chart-5: 90 25% 75%;
+    --chart-1: 20 55% 65%;
+    --chart-2: 100 30% 55%;
+    --chart-3: 40 65% 70%;
+    --chart-4: 140 40% 60%;
+    --chart-5: 25 45% 75%;
 
-    --sidebar-background: 120 25% 14%;
-    --sidebar-foreground: 90 25% 92%;
-    --sidebar-primary: 100 30% 55%;
-    --sidebar-primary-foreground: 120 25% 8%;
-    --sidebar-accent: 130 45% 60%;
-    --sidebar-accent-foreground: 120 25% 8%;
-    --sidebar-border: 110 15% 33%;
-    --sidebar-ring: 100 30% 55%;
+    /* Sidebar specific colors */
+    --sidebar-background: 100 20% 14%; /* Dark Sage for sidebar background */
+    --sidebar-foreground: 30 60% 92%;
+    --sidebar-primary: 20 60% 60%;
+    --sidebar-primary-foreground: 25 20% 8%;
+    --sidebar-accent: 140 45% 55%;
+    --sidebar-accent-foreground: 25 20% 8%;
+    --sidebar-border: 100 20% 38%;
+    --sidebar-ring: 20 60% 60%;
   }
 }
 
