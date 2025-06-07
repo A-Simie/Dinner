@@ -3,14 +3,12 @@
 
 import Image from 'next/image';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from "@/components/ui/badge";
 import { Droplets } from 'lucide-react';
 
 interface StyleItem {
   id: string;
   name: string;
-  designer: string;
+  designer: string; // Kept for data structure, but not displayed
   imageUrl: string;
   aiHint: string;
 }
@@ -30,40 +28,44 @@ const femaleStyles: StyleItem[] = [
 
 const maleStyles: StyleItem[] = [
   { id: 'm1', name: 'Classic Agbada', designer: 'Ade Bakare', imageUrl: 'https://placehold.co/400x500/CC6633/F7E7CE', aiHint: 'male agbada fashion' },
-  { id: 'm2', name: 'Modern Senator', designer: 'Yomi Casual', imageUrl: 'https://placehold.co/400x500/E2725B/F7E7CE', aiHint: 'male senator wear' },
-  { id: 'm3', name: 'Urban Dashiki', designer: 'Orange Culture', imageUrl: 'https://placehold.co/400x500/5A4D41/F7E7CE', aiHint: 'male dashiki outfit' },
-  { id: 'm4', name: 'Regal Brocade', designer: 'Mai Atafo', imageUrl: 'https://placehold.co/400x500/AA7739/F7E7CE', aiHint: 'male brocade suit' },
-  { id: 'm5', name: 'Elegant Kaftan', designer: 'Northern Styles', imageUrl: 'https://placehold.co/400x500/B08D57/F7E7CE', aiHint: 'male kaftan elegant' },
-  { id: 'm6', name: 'Sharp Tuxedo', designer: 'Evening Wear Inc.', imageUrl: 'https://placehold.co/400x500/332211/F7E7CE', aiHint: 'black tuxedo formal' },
+  { id: 'm2', name: 'Modern Senator', designer: 'Yomi Casual', imageUrl: 'https://placehold.co/400x600/E2725B/F7E7CE', aiHint: 'male senator wear' },
+  { id: 'm3', name: 'Urban Dashiki', designer: 'Orange Culture', imageUrl: 'https://placehold.co/400x450/5A4D41/F7E7CE', aiHint: 'male dashiki outfit' },
+  { id: 'm4', name: 'Regal Brocade', designer: 'Mai Atafo', imageUrl: 'https://placehold.co/400x550/AA7739/F7E7CE', aiHint: 'male brocade suit' },
+  { id: 'm5', name: 'Elegant Kaftan', designer: 'Northern Styles', imageUrl: 'https://placehold.co/400x520/B08D57/F7E7CE', aiHint: 'male kaftan elegant' },
+  { id: 'm6', name: 'Sharp Tuxedo', designer: 'Evening Wear Inc.', imageUrl: 'https://placehold.co/400x580/332211/F7E7CE', aiHint: 'black tuxedo formal' },
 ];
 
 const StyleGrid = ({ styles }: { styles: StyleItem[] }) => {
+  // Prepare columns for masonry layout.
+  // We'll create 4 columns for desktop, Tailwind will handle 2 columns for mobile via parent.
+  const numColumns = 4;
+  const columns: StyleItem[][] = Array.from({ length: numColumns }, () => []);
+  styles.forEach((style, index) => {
+    columns[index % numColumns].push(style);
+  });
+
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6">
-      {styles.map((style) => (
-            <Card key={style.id} className="group overflow-hidden h-fit flex flex-col champagne-hover shadow-lg border-border transform transition-all duration-300 hover:scale-105">
-              <CardHeader className="p-0">
-                <div className="relative w-full aspect-[4/5]">
-                  <Image
-                    src={style.imageUrl}
-                    alt={style.name}
-                    layout="fill"
-                    objectFit="cover"
-                    className="rounded-t-lg transform transition-transform duration-300 group-hover:scale-105"
-                    data-ai-hint={style.aiHint}
-                  />
-                </div>
-              </CardHeader>
-              <CardContent className="p-3 sm:p-4 flex-grow">
-                <CardTitle className="text-lg sm:text-xl font-headline text-primary">{style.name}</CardTitle>
-                <CardDescription className="text-xs sm:text-sm text-foreground/70 mt-1">
-                  By {style.designer}
-                </CardDescription>
-              </CardContent>
-              <CardFooter className="p-3 sm:p-4 pt-0">
-                 <Badge variant="outline" className="border-accent text-accent text-xs sm:text-sm">Inspiration</Badge>
-              </CardFooter>
-            </Card>
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      {columns.map((columnStyles, colIndex) => (
+        <div key={`masonry-col-${colIndex}`} className="grid gap-4">
+          {columnStyles.map((style) => (
+            <div key={style.id} className="champagne-hover rounded-lg overflow-hidden shadow-lg border border-border">
+              <div className="block w-full">
+                <Image
+                  src={style.imageUrl}
+                  alt={style.name} // Alt text is important for accessibility
+                  width={0} // Required for maintaining aspect ratio with style below
+                  height={0} // Required for maintaining aspect ratio with style below
+                  sizes="(max-width: 767px) 50vw, (max-width: 1023px) 25vw, 25vw" // Adjust based on your column setup
+                  style={{ width: '100%', height: 'auto' }} // This makes the image responsive and maintain aspect ratio
+                  className="rounded-lg" // Apply rounding to the image itself
+                  data-ai-hint={style.aiHint}
+                  priority={colIndex < 2 && columnStyles.indexOf(style) < 2} // Prioritize loading first few images
+                />
+              </div>
+            </div>
+          ))}
+        </div>
       ))}
     </div>
   );
@@ -99,3 +101,5 @@ export default function DripboardSection() {
     </section>
   );
 }
+
+    
