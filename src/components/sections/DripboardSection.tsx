@@ -8,7 +8,7 @@ import { Droplets } from 'lucide-react';
 interface StyleItem {
   id: string;
   name: string;
-  designer: string; 
+  designer: string;
   imageUrl: string;
   aiHint: string;
 }
@@ -36,7 +36,6 @@ const maleStyles: StyleItem[] = [
 ];
 
 const StyleGrid = ({ styles }: { styles: StyleItem[] }) => {
-  // Max number of columns for desktop. Tailwind's responsive classes handle actual display.
   const numColumns = 4; 
   const columns: StyleItem[][] = Array.from({ length: numColumns }, () => []);
   
@@ -56,10 +55,9 @@ const StyleGrid = ({ styles }: { styles: StyleItem[] }) => {
                   alt={style.name}
                   layout="fill"
                   objectFit="cover"
-                  className="rounded-lg"
                   data-ai-hint={style.aiHint}
-                  priority={styles.indexOf(style) < 4} // Prioritize first 4 images in the overall list
-                  sizes="(max-width: 767px) 50vw, (max-width: 1023px) 25vw, 23vw" // Approximate sizes based on 2 or 4 columns
+                  priority={styles.indexOf(style) < ( colIndex === 0 ? 4 : 2)} // Prioritize more images in earlier columns
+                  sizes="(max-width: 767px) 50vw, 25vw"
                 />
               </div>
             </div>
