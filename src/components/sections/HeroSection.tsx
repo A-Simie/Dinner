@@ -17,7 +17,7 @@ export default function HeroSection() {
   return (
     <section id="home" className="relative min-h-[70vh] sm:min-h-[80vh] flex flex-col items-center justify-center text-center py-16 sm:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <Image
-        src="https://i.ibb.co/j9KBqJzV/Whats-App-Image-2025-06-07-at-12-54-03-5f32e71e.jpg"
+        src="https://i.ibb.co/Mk87ypjB/We-Made-Quilling-Window-Decorations.jpg"
         alt="Elegant event background"
         layout="fill"
         objectFit="cover"
