@@ -36,32 +36,24 @@ const maleStyles: StyleItem[] = [
 ];
 
 const StyleGrid = ({ styles }: { styles: StyleItem[] }) => {
-  const numColumns = 4; 
-  const columns: StyleItem[][] = Array.from({ length: numColumns }, () => []);
-  
-  styles.forEach((style, index) => {
-    columns[index % numColumns].push(style);
-  });
-
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-      {columns.map((columnStyles, colIndex) => (
-        <div key={`masonry-col-${colIndex}`} className="grid gap-4">
-          {columnStyles.map((style) => (
-            <div key={style.id} className="champagne-hover rounded-lg overflow-hidden shadow-lg border border-border">
-              <div className="aspect-[4/5] relative w-full">
-                <Image
-                  src={style.imageUrl}
-                  alt={style.name}
-                  layout="fill"
-                  objectFit="cover"
-                  data-ai-hint={style.aiHint}
-                  priority={styles.indexOf(style) < ( colIndex === 0 ? 4 : 2)} // Prioritize more images in earlier columns
-                  sizes="(max-width: 767px) 50vw, 25vw"
-                />
-              </div>
-            </div>
-          ))}
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+      {styles.map((style, index) => (
+        <div 
+            key={style.id} 
+            className="champagne-hover rounded-lg overflow-hidden shadow-lg border border-border"
+        >
+          <div className="aspect-[4/5] relative w-full">
+            <Image
+              src={style.imageUrl}
+              alt={style.name}
+              layout="fill"
+              objectFit="cover"
+              data-ai-hint={style.aiHint}
+              priority={index < 6} // Prioritize the first 6 images
+              sizes="(max-width: 639px) 100vw, (max-width: 767px) 50vw, 33vw"
+            />
+          </div>
         </div>
       ))}
     </div>
@@ -98,4 +90,6 @@ export default function DripboardSection() {
     </section>
   );
 }
+    
+
     
