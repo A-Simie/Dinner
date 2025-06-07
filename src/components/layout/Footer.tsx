@@ -24,15 +24,15 @@ export default function Footer() {
         </p>
         <p className="text-[10px] sm:text-xs mt-1">Elegance & Expression Redefined.</p>
         
-        <p className="text-xs sm:text-sm mt-6">Powered by A.SImie</p>
+        <p className="text-xs sm:text-sm mt-6">Powered by A.Simie</p>
         <div className="flex justify-center items-center space-x-4 sm:space-x-6 mt-3">
-          <a href="#" aria-label="LinkedIn" className="text-muted-foreground hover:text-primary transition-colors duration-300">
+          <a href="https://www.linkedin.com/in/mosimiloluwa-a-21b0711a9/" aria-label="LinkedIn" className="text-muted-foreground hover:text-primary transition-colors duration-300">
             <Linkedin className="h-5 w-5 sm:h-6 sm:w-6" />
           </a>
-          <a href="#" aria-label="Instagram" className="text-muted-foreground hover:text-primary transition-colors duration-300">
+          <a href="https://www.instagram.com/a.simie/" aria-label="Instagram" className="text-muted-foreground hover:text-primary transition-colors duration-300">
             <Instagram className="h-5 w-5 sm:h-6 sm:w-6" />
           </a>
-          <a href="#" aria-label="TikTok" className="text-muted-foreground hover:text-primary transition-colors duration-300">
+          <a href="https://www.tiktok.com/@a.simie" aria-label="TikTok" className="text-muted-foreground hover:text-primary transition-colors duration-300">
             <TikTokIcon />
           </a>
         </div>

@@ -7,26 +7,26 @@ const landingImages = [
   {
     id: 'lp1',
     alt: 'Elegant table setting at Owanbe Evening',
-    imageUrl: 'https://placehold.co/600x400/CC6633/F7E7CE',
+    imageUrl: 'https://i.ibb.co/wrwz5zsj/Rococo-Revival-Wedding-Ideas-Rococo-Wedding-Aesthetic-Rococo-Wedding-Theme-Wedding-Photos.jpg',
     aiHint: 'elegant table setting',
   },
   {
     id: 'lp2',
     alt: 'Guests enjoying the Owanbe Evening',
-    imageUrl: 'https://placehold.co/600x400/E2725B/F7E7CE',
+    imageUrl: 'https://i.ibb.co/sdCrV9dQ/download.jpg',
     aiHint: 'party guests mingling',
   },
   {
     id: 'lp3',
     alt: 'Stylish fashion at Owanbe Evening',
-    imageUrl: 'https://placehold.co/600x400/5A4D41/F7E7CE',
+    imageUrl: 'https://i.ibb.co/B2JsGkFd/zora-zora3008-Profile-Pinterest.jpg',
     aiHint: 'african fashion style',
   },
-   {
+  {
     id: 'lp4',
     alt: 'Vibrant cultural performance',
-    imageUrl: 'https://placehold.co/600x400/F7E7CE/5A4D41',
-    aiHint: 'cultural dance performance',
+    imageUrl: 'https://i.ibb.co/Mk87ypjB/We-Made-Quilling-Window-Decorations.jpg',
+    aiHint: 'cultural dance event',
   },
 ];
 
@@ -41,9 +41,9 @@ export default function LandingPicsSection() {
           </h2>
         </div>
         <p className="text-base sm:text-lg text-foreground/80 mb-8 sm:mb-12 max-w-md sm:max-w-2xl mx-auto">
-          Catch a glimpse of the unforgettable moments and stunning visuals from past Owanbe Evenings.
+          Catch a glimpse of what to expect that Evening.
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
           {landingImages.map((pic) => (
             <Card key={pic.id} className="overflow-hidden champagne-hover shadow-xl border-border group transform transition-all duration-300 hover:scale-105">
               <CardContent className="p-0">

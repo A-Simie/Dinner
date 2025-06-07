@@ -11,7 +11,7 @@ export default function Header() {
     { name: 'Home', href: '/' },
     { name: 'Pics', href: '/pics' },
     { name: 'Theme', href: '/theme' },
-    { name: 'Lookbook', href: '/lookbook' },
+    { name: 'Dripboard', href: '/dripboard' },
     { name: 'Register', href: '/register' },
     { name: 'Vote', href: '/vote' },
   ];

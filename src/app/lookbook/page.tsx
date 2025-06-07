@@ -1,15 +1,8 @@
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
-import LookbookSection from '@/components/sections/LookbookSection';
 
-export default function LookbookPage() {
-  return (
-    <div className="flex flex-col min-h-screen">
-      <Header />
-      <main className="flex-grow">
-        <LookbookSection />
-      </main>
-      <Footer />
-    </div>
-  );
+// This file is deprecated and replaced by /src/app/dripboard/page.tsx
+// It can be safely deleted.
+// If your build system automatically picks up all files, 
+// ensure this is removed or renamed to avoid conflicts.
+export default function DeprecatedLookbookPage() {
+  return null;
 }
