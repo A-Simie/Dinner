@@ -9,8 +9,6 @@ import { Button } from "@/components/ui/button";
 export default function Header() {
   const navItems = [
     { name: 'Home', href: '/' },
-    { name: 'Pics', href: '/pics' },
-    { name: 'Theme', href: '/theme' },
     { name: 'Dripboard', href: '/dripboard' },
     { name: 'Register', href: '/register' },
     { name: 'Vote', href: '/vote' },
