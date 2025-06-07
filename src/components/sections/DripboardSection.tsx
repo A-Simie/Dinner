@@ -8,7 +8,7 @@ import { Droplets } from 'lucide-react';
 interface StyleItem {
   id: string;
   name: string;
-  designer: string; // Kept for data structure, but not displayed
+  designer: string; 
   imageUrl: string;
   aiHint: string;
 }
@@ -36,10 +36,10 @@ const maleStyles: StyleItem[] = [
 ];
 
 const StyleGrid = ({ styles }: { styles: StyleItem[] }) => {
-  // Prepare columns for masonry layout.
-  // We'll create 4 columns for desktop, Tailwind will handle 2 columns for mobile via parent.
-  const numColumns = 4;
+  // Max number of columns for desktop. Tailwind's responsive classes handle actual display.
+  const numColumns = 4; 
   const columns: StyleItem[][] = Array.from({ length: numColumns }, () => []);
+  
   styles.forEach((style, index) => {
     columns[index % numColumns].push(style);
   });
@@ -50,17 +50,16 @@ const StyleGrid = ({ styles }: { styles: StyleItem[] }) => {
         <div key={`masonry-col-${colIndex}`} className="grid gap-4">
           {columnStyles.map((style) => (
             <div key={style.id} className="champagne-hover rounded-lg overflow-hidden shadow-lg border border-border">
-              <div className="block w-full">
+              <div className="aspect-[4/5] relative w-full">
                 <Image
                   src={style.imageUrl}
-                  alt={style.name} // Alt text is important for accessibility
-                  width={0} // Required for maintaining aspect ratio with style below
-                  height={0} // Required for maintaining aspect ratio with style below
-                  sizes="(max-width: 767px) 50vw, (max-width: 1023px) 25vw, 25vw" // Adjust based on your column setup
-                  style={{ width: '100%', height: 'auto' }} // This makes the image responsive and maintain aspect ratio
-                  className="rounded-lg" // Apply rounding to the image itself
+                  alt={style.name}
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-lg"
                   data-ai-hint={style.aiHint}
-                  priority={colIndex < 2 && columnStyles.indexOf(style) < 2} // Prioritize loading first few images
+                  priority={styles.indexOf(style) < 4} // Prioritize first 4 images in the overall list
+                  sizes="(max-width: 767px) 50vw, (max-width: 1023px) 25vw, 23vw" // Approximate sizes based on 2 or 4 columns
                 />
               </div>
             </div>
@@ -101,5 +100,4 @@ export default function DripboardSection() {
     </section>
   );
 }
-
     
