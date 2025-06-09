@@ -5,6 +5,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import HeroSection from '@/components/sections/HeroSection';
 import LandingPicsSection from '@/components/sections/LandingPicsSection';
+import VisionariesSection from '@/components/sections/VisionariesSection';
 import { Separator } from '@/components/ui/separator';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -33,8 +34,6 @@ export default function Home() {
       <main className="flex-grow">
         <HeroSection />
         <Separator className="my-0 border-accent/30" />
-        <LandingPicsSection />
-        <Separator className="my-12 border-accent/30" />
         
         <section id="dripboard-preview" className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-background">
           <div className="container mx-auto text-center">
@@ -86,6 +85,11 @@ export default function Home() {
             </Button>
           </div>
         </section>
+        
+        <Separator className="my-12 border-accent/30" />
+        <VisionariesSection />
+        <Separator className="my-12 border-accent/30" />
+        <LandingPicsSection />
 
       </main>
       <Footer />
