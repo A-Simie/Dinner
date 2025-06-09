@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import HeroSection from '@/components/sections/HeroSection';
-import LandingPicsSection from '@/components/sections/LandingPicsSection';
+import LandingPicsSection from '@/components/sections/LandingPicsSection'; // Renamed section
 import VisionariesSection from '@/components/sections/VisionariesSection';
 import { Separator } from '@/components/ui/separator';
 import { Button } from "@/components/ui/button";
@@ -18,7 +18,6 @@ import {
 } from "@/components/ui/carousel";
 import { Droplets } from 'lucide-react';
 
-// Selected distinct styles for the preview carousel
 // Using 3rd and 4th items from female and male style lists respectively
 const dripboardPreviewItems = [
   { id: 'f-preview-3', name: 'Regal Green Ensemble', imageUrl: 'https://i.ibb.co/DH7zJ0WB/Prudent-Gabriel-Nigeria.jpg', aiHint: 'nigerian traditional green', category: 'Female' },
@@ -33,7 +32,9 @@ export default function Home() {
       <Header />
       <main className="flex-grow">
         <HeroSection />
-        <Separator className="my-0 border-accent/30" />
+        <LandingPicsSection /> {/* Moved and will display as "Event Decor Preview" */}
+        
+        <Separator className="my-12 border-accent/30" /> 
         
         <section id="dripboard-preview" className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-background">
           <div className="container mx-auto text-center">
@@ -88,9 +89,6 @@ export default function Home() {
         
         <Separator className="my-12 border-accent/30" />
         <VisionariesSection />
-        <Separator className="my-12 border-accent/30" />
-        <LandingPicsSection />
-
       </main>
       <Footer />
     </div>

@@ -1,7 +1,7 @@
 
 import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
-import { Camera } from 'lucide-react';
+import { Camera } from 'lucide-react'; // Can change this icon if needed for "Decor" theme
 
 const landingImages = [
   {
@@ -32,12 +32,12 @@ const landingImages = [
 
 export default function LandingPicsSection() {
   return (
-    <section id="pics" className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-background">
+    <section id="decor-preview" className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="container mx-auto text-center">
         <div className="flex justify-center items-center mb-3 sm:mb-4">
-          <Camera className="h-10 w-10 sm:h-12 sm:w-12 text-primary mr-2 sm:mr-3" />
+          <Camera className="h-10 w-10 sm:h-12 sm:w-12 text-primary mr-2 sm:mr-3" /> {/* Consider changing to Palette or Sparkles for decor */}
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary font-headline">
-            Event Snapshots
+            Event Decor Preview
           </h2>
         </div>
         <p className="text-base sm:text-lg text-foreground/80 mb-8 sm:mb-12 max-w-md sm:max-w-2xl mx-auto">
