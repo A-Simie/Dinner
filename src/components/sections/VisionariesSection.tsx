@@ -21,7 +21,8 @@ export default function VisionariesSection() {
 
         <div className="flex justify-center mb-10 sm:mb-12 md:mb-16">
           <div className="w-full max-w-md sm:max-w-lg md:max-w-xl overflow-hidden rounded-lg shadow-xl border border-border group champagne-hover">
-            <div className="aspect-w-4 aspect-h-3 sm:aspect-w-3 sm:aspect-h-2 md:aspect-w-4 md:aspect-h-3 relative">
+            {/* Use modern Tailwind aspect ratio class like aspect-[4/3] or a specific one if known */}
+            <div className="aspect-[4/3] relative"> {/* Adjusted aspect ratio class */}
               <Image
                 src={visionaryImageUrl}
                 alt={visionaryImageAlt}
