@@ -3,7 +3,7 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster"; // Added for potential form success/error messages
 
 export const metadata: Metadata = {
-  title: 'Owanbe Evening',
+  title: 'Icons Owanbe Evening',
   description: 'An Evening of Elegance & Expression',
 };
 
