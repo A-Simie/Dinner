@@ -2,14 +2,10 @@
 import Image from 'next/image';
 import { Users } from 'lucide-react';
 
-const eldersData = Array.from({ length: 24 }, (_, i) => ({
-  id: `elder-${i + 1}`,
-  imageUrl: `https://placehold.co/400x400.png`,
-  alt: `Image of Elder ${i + 1}`,
-  aiHint: 'elder portrait',
-}));
-
 export default function VisionariesSection() {
+  const visionaryImageUrl = "https://i.ibb.co/mCCkhyRr/Whats-App-Image-2025-06-09-at-13-16-26-65389866.jpg";
+  const visionaryImageAlt = "The Visionaries Behind the Night";
+
   return (
     <section id="visionaries" className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="container mx-auto text-center">
@@ -23,22 +19,20 @@ export default function VisionariesSection() {
             Meet The 24 Elders
         </p>
 
-        <div className="flex flex-col items-center gap-8 sm:gap-10 md:gap-12 mb-10 sm:mb-12 md:mb-16">
-          {eldersData.map((elder, index) => (
-            <div key={elder.id} className="w-full max-w-xs sm:max-w-sm md:max-w-md overflow-hidden rounded-lg shadow-xl border border-border group champagne-hover">
-              <div className="aspect-square relative">
-                <Image
-                  src={elder.imageUrl}
-                  alt={elder.alt}
-                  layout="fill"
-                  objectFit="cover"
-                  data-ai-hint={elder.aiHint}
-                  priority={index < 3} 
-                  className="transform transition-transform duration-300 group-hover:scale-105"
-                />
-              </div>
+        <div className="flex justify-center mb-10 sm:mb-12 md:mb-16">
+          <div className="w-full max-w-md sm:max-w-lg md:max-w-xl overflow-hidden rounded-lg shadow-xl border border-border group champagne-hover">
+            <div className="aspect-w-4 aspect-h-3 sm:aspect-w-3 sm:aspect-h-2 md:aspect-w-4 md:aspect-h-3 relative">
+              <Image
+                src={visionaryImageUrl}
+                alt={visionaryImageAlt}
+                layout="fill"
+                objectFit="cover"
+                data-ai-hint="group photo event organizers" 
+                priority
+                className="transform transition-transform duration-300 group-hover:scale-105"
+              />
             </div>
-          ))}
+          </div>
         </div>
 
         <div className="max-w-prose mx-auto text-left sm:text-center text-base sm:text-lg text-foreground/80 space-y-4">
