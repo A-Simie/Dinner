@@ -22,9 +22,9 @@ export default function Header() {
           <Image 
             src="https://i.ibb.co/Q1xx0Qx/Iconic-Image-EDIT-1.png" 
             alt="Owanbe Evening Logo" 
-            width={32} 
-            height={32} 
-            className="h-7 w-7 sm:h-8 sm:w-8"
+            width={40} 
+            height={40} 
+            className="h-8 w-8 sm:h-10 sm:w-10"
           />
           <h1 className="text-2xl sm:text-3xl font-headline font-bold text-primary">
             Owanbe Evening
