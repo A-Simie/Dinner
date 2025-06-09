@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { Toaster } from "@/components/ui/toaster"; // Added for potential form success/error messages
+import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
   title: 'Icons Owanbe Evening',
