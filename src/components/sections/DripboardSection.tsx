@@ -27,12 +27,21 @@ const femaleStyles: StyleItem[] = [
 ];
 
 const maleStyles: StyleItem[] = [
-  { id: 'm1', name: 'Classic Agbada', designer: 'Ade Bakare', imageUrl: 'https://placehold.co/400x500/CC6633/F7E7CE', aiHint: 'male agbada fashion' },
-  { id: 'm2', name: 'Modern Senator', designer: 'Yomi Casual', imageUrl: 'https://placehold.co/400x600/E2725B/F7E7CE', aiHint: 'male senator wear' },
-  { id: 'm3', name: 'Urban Dashiki', designer: 'Orange Culture', imageUrl: 'https://placehold.co/400x450/5A4D41/F7E7CE', aiHint: 'male dashiki outfit' },
-  { id: 'm4', name: 'Regal Brocade', designer: 'Mai Atafo', imageUrl: 'https://placehold.co/400x550/AA7739/F7E7CE', aiHint: 'male brocade suit' },
-  { id: 'm5', name: 'Elegant Kaftan', designer: 'Northern Styles', imageUrl: 'https://placehold.co/400x520/B08D57/F7E7CE', aiHint: 'male kaftan elegant' },
-  { id: 'm6', name: 'Sharp Tuxedo', designer: 'Evening Wear Inc.', imageUrl: 'https://placehold.co/400x580/332211/F7E7CE', aiHint: 'black tuxedo formal' },
+  { id: 'm1', name: 'Azure Agbada Elegance', designer: 'Trad Stitches', imageUrl: 'https://i.ibb.co/Pv73H4J5/download-9.jpg', aiHint: 'male agbada blue' },
+  { id: 'm2', name: 'Ceremonial Embroidery Suit', designer: 'Kulture Kings', imageUrl: 'https://i.ibb.co/xKCMHb5s/African-Men-3-piece-Ceremonial-Suit-African-Men-Suit-with-Embroided-Jacket-African-wedding-and-groom.jpg', aiHint: 'african suit embroidery' },
+  { id: 'm3', name: 'Crystal Coated Kaftan', designer: 'Royal Garbs', imageUrl: 'https://i.ibb.co/7PXn24c/African-traditional-clothing-with-coated-crystal-African-men-s-kaftan-2-piece-dress-Men-s-suit-attir.jpg', aiHint: 'male kaftan crystal' },
+  { id: 'm4', name: 'Ade Badol Custom Agbada', designer: 'Ade Badol', imageUrl: 'https://i.ibb.co/JW61P7d9/Ade-Badol-custom-4-Piece-agbada.jpg', aiHint: 'agbada custom piece' },
+  { id: 'm5', name: 'Guest Asoebi Attire', designer: 'Asoebi Central', imageUrl: 'https://i.ibb.co/Wpqqg64h/JP2025-Guests-Asoebi.jpg', aiHint: 'male asoebi guest' },
+  { id: 'm6', name: 'Yoruba Groom Traditional', designer: 'Wedding Styles Inc.', imageUrl: 'https://i.ibb.co/CK8LXq0z/Yoruba-Bride-and-Groom.jpg', aiHint: 'yoruba groom traditional' },
+  { id: 'm7', name: 'Artist Couple Wedding Look', designer: 'Love & Threads', imageUrl: 'https://i.ibb.co/yc3WpLv6/Yoruba-couple-artist-9ice-and-his-wife-at-wedding.jpg', aiHint: 'yoruba couple wedding' },
+  { id: 'm8', name: 'Blue & Gold Agbada', designer: 'Kings Attire Co.', imageUrl: 'https://i.ibb.co/KxP7zBkY/download-8.jpg', aiHint: 'blue gold agbada' },
+  { id: 'm9', name: 'Pristine White Senator', designer: 'Classic Man Styles', imageUrl: 'https://i.ibb.co/3mSFL5wV/download-7.jpg', aiHint: 'white senator suit' },
+  { id: 'm10', name: 'Patterned Agbada Ensemble', designer: 'Urban Trad Designs', imageUrl: 'https://i.ibb.co/2TS6Fv7/download-6.jpg', aiHint: 'patterned agbada set' },
+  { id: 'm11', name: 'Modern Wine Agbada', designer: 'Tevriss Collection', imageUrl: 'https://i.ibb.co/YByG8h1v/Tevriss.jpg', aiHint: 'wine agbada modern' },
+  { id: 'm12', name: 'Intricate White Agbada', designer: 'Luxe African Wear', imageUrl: 'https://i.ibb.co/gb3kLrjZ/download-5.jpg', aiHint: 'white agbada intricate' },
+  { id: 'm13', name: 'Striped Senator Suit', designer: 'Senator Style House', imageUrl: 'https://i.ibb.co/Lhzp8NDH/download-4.jpg', aiHint: 'striped senator suit' },
+  { id: 'm14', name: 'AMVCA Cultural Trad', designer: 'Event Styles Africa', imageUrl: 'https://i.ibb.co/fdq0TcSq/The-Gents-at-AMVCA10-Cultural-Night-Have-The-Perfect-Trad-Inspo.jpg', aiHint: 'cultural trad inspo' },
+  { id: 'm15', name: 'Black Asooke Agbada', designer: 'Luxury Asooke Wear', imageUrl: 'https://i.ibb.co/C3Q7r2bq/Black-Luxurious-asooke-agbada-style-inspo.jpg', aiHint: 'black asooke agbada' },
 ];
 
 const StyleGrid = ({ styles }: { styles: StyleItem[] }) => {
@@ -41,7 +50,7 @@ const StyleGrid = ({ styles }: { styles: StyleItem[] }) => {
       {styles.map((style, index) => (
         <div 
             key={style.id} 
-            className="champagne-hover rounded-lg overflow-hidden shadow-lg border border-border"
+            className="champagne-hover rounded-lg overflow-hidden shadow-lg border border-border group"
         >
           <div className="aspect-[4/5] relative w-full">
             <Image
@@ -50,8 +59,9 @@ const StyleGrid = ({ styles }: { styles: StyleItem[] }) => {
               layout="fill"
               objectFit="cover"
               data-ai-hint={style.aiHint}
-              priority={index < 6} // Prioritize the first 6 images
+              priority={index < 6} 
               sizes="(max-width: 639px) 100vw, (max-width: 767px) 50vw, 33vw"
+              className="transform transition-transform duration-300 group-hover:scale-105"
             />
           </div>
         </div>

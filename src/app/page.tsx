@@ -18,10 +18,10 @@ import {
 import { Droplets } from 'lucide-react';
 
 const dripboardPreviewItems = [
-  { id: 'f-preview-1', name: 'Regal Green Ensemble', imageUrl: 'https://i.ibb.co/DH7zJ0WB/Prudent-Gabriel-Nigeria.jpg', aiHint: 'nigerian traditional green', category: 'Female' },
-  { id: 'm-preview-1', name: 'Classic Agbada', imageUrl: 'https://placehold.co/400x500/CC6633/F7E7CE', aiHint: 'male agbada fashion', category: 'Male' },
-  { id: 'f-preview-2', name: 'Crimson Aso Ebi', imageUrl: 'https://i.ibb.co/20cjLnBs/This-is-so-lovely-Designer-empireofupgrade.jpg', aiHint: 'red aso ebi', category: 'Female' },
-  { id: 'm-preview-2', name: 'Modern Senator', imageUrl: 'https://placehold.co/400x500/E2725B/F7E7CE', aiHint: 'male senator wear', category: 'Male' },
+  { id: 'f-preview-1', name: 'Golden Hour Elegance', imageUrl: 'https://i.ibb.co/XrJQ8pJH/image.jpg', aiHint: 'african fashion gold', category: 'Female' },
+  { id: 'm-preview-new-1', name: 'Azure Agbada Elegance', imageUrl: 'https://i.ibb.co/Pv73H4J5/download-9.jpg', aiHint: 'male agbada blue', category: 'Male' },
+  { id: 'f-preview-2', name: 'Regal Green Ensemble', imageUrl: 'https://i.ibb.co/DH7zJ0WB/Prudent-Gabriel-Nigeria.jpg', aiHint: 'nigerian traditional green', category: 'Female' },
+  { id: 'm-preview-new-2', name: 'Ceremonial Embroidery Suit', imageUrl: 'https://i.ibb.co/xKCMHb5s/African-Men-3-piece-Ceremonial-Suit-African-Men-Suit-with-Embroided-Jacket-African-wedding-and-groom.jpg', aiHint: 'african suit embroidery', category: 'Male' },
 ];
 
 export default function Home() {
@@ -90,3 +90,4 @@ export default function Home() {
     </div>
   );
 }
+
