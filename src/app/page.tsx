@@ -18,11 +18,12 @@ import {
 import { Droplets } from 'lucide-react';
 
 // Selected distinct styles for the preview carousel
+// Using 3rd and 4th items from female and male style lists respectively
 const dripboardPreviewItems = [
-  { id: 'f-preview-1', name: 'Golden Hour Elegance', imageUrl: 'https://i.ibb.co/XrJQ8pJH/image.jpg', aiHint: 'african fashion gold', category: 'Female' },
-  { id: 'm-preview-1', name: 'Azure Agbada Elegance', imageUrl: 'https://i.ibb.co/Pv73H4J5/download-9.jpg', aiHint: 'male agbada blue', category: 'Male' },
-  { id: 'f-preview-2', name: 'Yoruba Bridal Bliss', imageUrl: 'https://i.ibb.co/CpbgbzCX/Yoruba-Bride-Yoruba-Wedding.jpg', aiHint: 'yoruba bride traditional', category: 'Female' },
-  { id: 'm-preview-2', name: 'Ceremonial Embroidery Suit', imageUrl: 'https://i.ibb.co/xKCMHb5s/African-Men-3-piece-Ceremonial-Suit-African-Men-Suit-with-Embroided-Jacket-African-wedding-and-groom.jpg', aiHint: 'african suit embroidery', category: 'Male' },
+  { id: 'f-preview-3', name: 'Regal Green Ensemble', imageUrl: 'https://i.ibb.co/DH7zJ0WB/Prudent-Gabriel-Nigeria.jpg', aiHint: 'nigerian traditional green', category: 'Female' },
+  { id: 'm-preview-3', name: 'Crystal Coated Kaftan', imageUrl: 'https://i.ibb.co/7PXn24c/African-traditional-clothing-with-coated-crystal-African-men-s-kaftan-2-piece-dress-Men-s-suit-attir.jpg', aiHint: 'male kaftan crystal', category: 'Male' },
+  { id: 'f-preview-4', name: 'Crimson Aso Ebi', imageUrl: 'https://i.ibb.co/20cjLnBs/This-is-so-lovely-Designer-empireofupgrade.jpg', aiHint: 'red aso ebi', category: 'Female' },
+  { id: 'm-preview-4', name: 'Ade Badol Custom Agbada', imageUrl: 'https://i.ibb.co/JW61P7d9/Ade-Badol-custom-4-Piece-agbada.jpg', aiHint: 'agbada custom piece', category: 'Male' },
 ];
 
 export default function Home() {
