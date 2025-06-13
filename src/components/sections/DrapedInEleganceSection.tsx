@@ -19,8 +19,22 @@ export default function DrapedInEleganceSection() {
         </div>
 
         <div className="flex flex-col md:flex-row items-center gap-8 lg:gap-12">
-          {/* Text Content - Order first for mobile, then use md:order-1 for desktop */}
-          <div className="md:w-1/2 md:order-1 text-center md:text-left">
+          {/* Image - Order first for mobile, then use md:order-1 for desktop */}
+          <div className="md:w-1/2 md:order-1 mt-8 md:mt-0 w-full max-w-md mx-auto md:max-w-none">
+            <div className="relative aspect-[3/4] rounded-lg shadow-xl overflow-hidden champagne-hover">
+              <Image
+                src={imageUrl}
+                alt={imageAlt}
+                layout="fill"
+                objectFit="cover"
+                data-ai-hint="elegant woman traditional"
+                className="transform transition-transform duration-300 group-hover:scale-105"
+              />
+            </div>
+          </div>
+
+          {/* Text Content - Order second for mobile, then use md:order-2 for desktop */}
+          <div className="md:w-1/2 md:order-2 text-center md:text-left">
             <div className="space-y-4 text-base sm:text-lg text-foreground/80 leading-relaxed max-w-xl mx-auto md:mx-0">
               <p>
                 She doesn’t just wear tradition; she defines it. Draped in the richness of heritage and crowned with poise, this is not just a look; it’s a statement.
@@ -31,20 +45,6 @@ export default function DrapedInEleganceSection() {
               <p className="font-semibold text-primary/90">
                 Unforgettable. Timeless. Undeniably iconic.
               </p>
-            </div>
-          </div>
-
-          {/* Image - Order second for mobile, then use md:order-2 for desktop */}
-          <div className="md:w-1/2 md:order-2 mt-8 md:mt-0 w-full max-w-md mx-auto md:max-w-none">
-            <div className="relative aspect-[3/4] rounded-lg shadow-xl overflow-hidden champagne-hover border border-border">
-              <Image
-                src={imageUrl}
-                alt={imageAlt}
-                layout="fill"
-                objectFit="cover"
-                data-ai-hint="elegant woman traditional"
-                className="transform transition-transform duration-300 group-hover:scale-105"
-              />
             </div>
           </div>
         </div>

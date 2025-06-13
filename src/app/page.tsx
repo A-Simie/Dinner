@@ -6,7 +6,7 @@ import Footer from '@/components/layout/Footer';
 import HeroSection from '@/components/sections/HeroSection';
 import LandingPicsSection from '@/components/sections/LandingPicsSection'; 
 import VisionariesSection from '@/components/sections/VisionariesSection';
-import DrapedInEleganceSection from '@/components/sections/DrapedInEleganceSection'; // New section import
+import DrapedInEleganceSection from '@/components/sections/DrapedInEleganceSection';
 import { Separator } from '@/components/ui/separator';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -34,9 +34,9 @@ export default function Home() {
       <main className="flex-grow">
         <HeroSection />
         <LandingPicsSection /> 
-        
         <Separator className="my-12 border-accent/30" /> 
-        
+        <DrapedInEleganceSection />
+        <Separator className="my-12 border-accent/30" /> 
         <section id="dripboard-preview" className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-background">
           <div className="container mx-auto text-center">
             <div className="flex justify-center items-center mb-3 sm:mb-4">
@@ -87,11 +87,8 @@ export default function Home() {
             </Button>
           </div>
         </section>
-        
         <Separator className="my-12 border-accent/30" />
         <VisionariesSection />
-        <Separator className="my-12 border-accent/30" /> 
-        <DrapedInEleganceSection />
       </main>
       <Footer />
     </div>
