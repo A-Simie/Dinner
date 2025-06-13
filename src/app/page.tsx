@@ -4,8 +4,9 @@ import Image from 'next/image';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import HeroSection from '@/components/sections/HeroSection';
-import LandingPicsSection from '@/components/sections/LandingPicsSection'; // Renamed section
+import LandingPicsSection from '@/components/sections/LandingPicsSection'; 
 import VisionariesSection from '@/components/sections/VisionariesSection';
+import DrapedInEleganceSection from '@/components/sections/DrapedInEleganceSection'; // New section import
 import { Separator } from '@/components/ui/separator';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -32,7 +33,7 @@ export default function Home() {
       <Header />
       <main className="flex-grow">
         <HeroSection />
-        <LandingPicsSection /> {/* Moved and will display as "Event Decor Preview" */}
+        <LandingPicsSection /> 
         
         <Separator className="my-12 border-accent/30" /> 
         
@@ -89,6 +90,8 @@ export default function Home() {
         
         <Separator className="my-12 border-accent/30" />
         <VisionariesSection />
+        <Separator className="my-12 border-accent/30" /> 
+        <DrapedInEleganceSection />
       </main>
       <Footer />
     </div>
