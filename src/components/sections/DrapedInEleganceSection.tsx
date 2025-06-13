@@ -21,14 +21,14 @@ export default function DrapedInEleganceSection() {
         <div className="flex flex-col md:flex-row items-center gap-8 lg:gap-12">
           {/* Image - Order first for mobile, then use md:order-1 for desktop */}
           <div className="md:w-1/2 md:order-1 mt-8 md:mt-0 w-full max-w-md mx-auto md:max-w-none">
-            <div className="relative aspect-[3/4] rounded-lg shadow-xl overflow-hidden champagne-hover">
+            <div className="relative aspect-[3/4]">
               <Image
                 src={imageUrl}
                 alt={imageAlt}
                 layout="fill"
-                objectFit="cover"
+                objectFit="contain" 
                 data-ai-hint="elegant woman traditional"
-                className="transform transition-transform duration-300 group-hover:scale-105"
+                className="transform transition-transform duration-300 hover:scale-105"
               />
             </div>
           </div>
@@ -52,3 +52,4 @@ export default function DrapedInEleganceSection() {
     </section>
   );
 }
+
