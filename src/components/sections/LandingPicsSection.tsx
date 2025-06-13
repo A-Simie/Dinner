@@ -5,28 +5,22 @@ import { Camera } from 'lucide-react'; // Can change this icon if needed for "De
 
 const landingImages = [
   {
-    id: 'lp1',
-    alt: 'Elegant table setting at Owanbe Evening',
-    imageUrl: 'https://i.ibb.co/wrwz5zsj/Rococo-Revival-Wedding-Ideas-Rococo-Wedding-Aesthetic-Rococo-Wedding-Theme-Wedding-Photos.jpg',
-    aiHint: 'elegant table setting',
+    id: 'decor1',
+    alt: 'Elegant event decor setup with floral arrangements',
+    imageUrl: 'https://i.ibb.co/kVyy7FFF/Whats-App-Image-2025-06-11-at-08-26-17-c8d3333f.jpg',
+    aiHint: 'event decor',
   },
   {
-    id: 'lp2',
-    alt: 'Guests enjoying the Owanbe Evening',
-    imageUrl: 'https://i.ibb.co/sdCrV9dQ/download.jpg',
-    aiHint: 'party guests mingling',
+    id: 'decor2',
+    alt: 'Luxury table setting with gold accents for Owanbe Evening',
+    imageUrl: 'https://i.ibb.co/VYRgCMdN/Whats-App-Image-2025-06-11-at-08-26-17-df9ad503.jpg',
+    aiHint: 'table setting',
   },
   {
-    id: 'lp3',
-    alt: 'Stylish fashion at Owanbe Evening',
-    imageUrl: 'https://i.ibb.co/B2JsGkFd/zora-zora3008-Profile-Pinterest.jpg',
-    aiHint: 'african fashion style',
-  },
-  {
-    id: 'lp4',
-    alt: 'Vibrant cultural performance',
-    imageUrl: 'https://i.ibb.co/Mk87ypjB/We-Made-Quilling-Window-Decorations.jpg',
-    aiHint: 'cultural dance event',
+    id: 'decor3',
+    alt: 'Stylish event ambiance with warm lighting',
+    imageUrl: 'https://i.ibb.co/bRRmgdvX/Whats-App-Image-2025-06-11-at-08-26-18-7e8c0365.jpg',
+    aiHint: 'event ambiance',
   },
 ];
 
@@ -43,7 +37,7 @@ export default function LandingPicsSection() {
         <p className="text-base sm:text-lg text-foreground/80 mb-8 sm:mb-12 max-w-md sm:max-w-2xl mx-auto">
           Catch a glimpse of what to expect that Evening.
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 gap-6 sm:gap-8 md:max-w-2xl lg:max-w-3xl mx-auto">
           {landingImages.map((pic) => (
             <Card key={pic.id} className="overflow-hidden champagne-hover shadow-xl border-border group transform transition-all duration-300 hover:scale-105">
               <CardContent className="p-0">
