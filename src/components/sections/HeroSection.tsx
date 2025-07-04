@@ -1,12 +1,11 @@
 
-// import CountdownTimer from '@/components/shared/CountdownTimer';
+import CountdownTimer from '@/components/shared/CountdownTimer';
 import Image from 'next/image';
 import TypewriterEffect from '@/components/shared/TypewriterEffect';
 
 export default function HeroSection() {
-  // Set target date for the event (e.g., 30 days from now)
-  // const targetEventDate = new Date();
-  // targetEventDate.setDate(targetEventDate.getDate() + 30);
+  // Set target date for the event to July 18th, current year, at 5:00 PM
+  const targetEventDate = new Date(new Date().getFullYear(), 6, 18, 17, 0, 0);
 
   const heroTitle = (
     <>
@@ -37,33 +36,12 @@ export default function HeroSection() {
         <p className="text-lg sm:text-xl md:text-2xl text-secondary-foreground max-w-xs sm:max-w-xl md:max-w-3xl mx-auto animate-fadeInUp" style={{animationDelay: '1.5s', opacity: 0}}>
           Join us for an unforgettable night celebrating style, culture, and creativity.
         </p>
-        {/*
+        
         <div className="mt-8 sm:mt-12 animate-fadeInUp" style={{animationDelay: '2s', opacity: 0}}>
           <CountdownTimer targetDate={targetEventDate} />
         </div>
-        */}
+        
       </div>
     </section>
   );
 }
-
-// Basic CSS for fadeInUp animation (add to globals.css or a relevant CSS module)
-/*
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fadeInUp {
-  animation-name: fadeInUp;
-  animation-duration: 0.8s;
-  animation-fill-mode: forwards;
-}
-*/
-

@@ -11,8 +11,6 @@ export default function Header() {
   const navItems = [
     { name: 'Home', href: '/' },
     { name: 'Dripboard', href: '/dripboard' },
-    { name: 'Register', href: '/register' },
-    { name: 'Vote', href: '/vote' },
   ];
 
   return (
@@ -20,7 +18,7 @@ export default function Header() {
       <div className="container mx-auto flex justify-between items-center">
         <Link href="/" className="flex items-center gap-2">
           <Image 
-            src="https://i.ibb.co/Q1xx0Qx/Iconic-Image-EDIT-1.png" 
+            src="https://i.ibb.co/Q1xx0Qx/Iconic-Image-EDIT-1.png?v=2" 
             alt="Owanbe Evening Logo" 
             width={48} 
             height={48} 
