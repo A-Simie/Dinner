@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from 'next/image';
@@ -19,8 +18,8 @@ export default function DrapedInEleganceSection() {
         </div>
 
         <div className="flex flex-col md:flex-row items-center gap-8 lg:gap-12">
-          {/* Image - Order first for mobile, then use md:order-1 for desktop */}
-          <div className="md:w-1/2 md:order-1 mt-8 md:mt-0 w-full max-w-md mx-auto md:max-w-none">
+          {/* Image - now takes up 40% of width on desktop */}
+          <div className="md:w-2/5 w-full">
             <div className="relative aspect-[3/4]">
               <Image
                 src={imageUrl}
@@ -33,8 +32,8 @@ export default function DrapedInEleganceSection() {
             </div>
           </div>
 
-          {/* Text Content - Order second for mobile, then use md:order-2 for desktop */}
-          <div className="md:w-1/2 md:order-2 text-center md:text-left">
+          {/* Text Content - now takes up 60% of width on desktop */}
+          <div className="md:w-3/5 text-center md:text-left">
             <div className="space-y-4 text-base sm:text-lg text-foreground/80 leading-relaxed max-w-xl mx-auto md:mx-0">
               <p>
                 She doesn’t just wear tradition; she defines it. Draped in the richness of heritage and crowned with poise, this is not just a look; it’s a statement.
@@ -52,4 +51,3 @@ export default function DrapedInEleganceSection() {
     </section>
   );
 }
-
