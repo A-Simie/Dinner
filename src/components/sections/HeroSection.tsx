@@ -4,8 +4,8 @@ import Image from 'next/image';
 import TypewriterEffect from '@/components/shared/TypewriterEffect';
 
 export default function HeroSection() {
-  // Set target date for the event to July 18th, current year, at 5:00 PM
-  const targetEventDate = new Date(new Date().getFullYear(), 6, 18, 17, 0, 0);
+  // Set target date for the event to July 23rd, current year, at 5:00 PM
+  const targetEventDate = new Date(new Date().getFullYear(), 6, 23, 17, 0, 0);
 
   const heroTitle = (
     <>
